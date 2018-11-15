@@ -20,23 +20,20 @@ void datainput(){
 void search(int x, int y, int status){ 
     if (map[x][y] == 1) return;
 	
-	if (map[x][y] == 0)//1.
+    if (map[x][y] == 0)//1.
     {
         map[x][y] = 2;
         res++;
     }
 
     for(int i = 0; i < 4; i++){
-		int next_direction = status-1 < 0 ? 3 : status-1;
+	int next_direction = status-1 < 0 ? 3 : status-1;
         int next_x = x + dirx[next_direction], next_y = y + diry[next_direction];
         if(map[next_x][next_y] == 0){ // 2.1
             search(next_x, next_y, next_direction);
 			return ; // dfs랑 다른점입니다.
         }
-		else
-        {
-            status = next_direction;
-        }
+	else status = next_direction;
     }
 	int next_x = x + back_dx[status], next_y = y + back_dy[status];
 	search(next_x, next_y, status);
