@@ -31,13 +31,12 @@ void search(int x, int y, int status){
         int next_x = x + dirx[next_direction], next_y = y + diry[next_direction];
         if(map[next_x][next_y] == 0){ // 2.1
             search(next_x, next_y, next_direction);
-			return ;
+			return ; // dfs랑 다른점입니다.
         }
 		else
         {
             status = next_direction;
         }
-        //2.2
     }
 	int next_x = x + back_dx[status], next_y = y + back_dy[status];
 	search(next_x, next_y, status);
