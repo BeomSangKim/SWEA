@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int map[100][102] = {{0,}}; // isWall()함수 대신 102로 잡고 padding 생성
+int map[100][102] = {0,}; // isWall()함수 대신 102로 잡고 padding 생성
 int stpx = 0;
 int total_TC = 10, cur_TC = 0;
 
