@@ -6,7 +6,6 @@ typedef struct atom{
 	float X, Y;
 	int D, K;
 	bool alive;
-
 }atom;
 
 int res = 0;
