@@ -19,8 +19,8 @@ Created on Wed Dec 12 13:48:40 2018
 
 import tensorflow as tf
 
-x_train = [1,2,3]
-y_train = [1,2,3]
+x_train = [1,2,3] #원하는 입력값으로 바꾸어도 상관없습니다.
+y_train = [1,2,3] #원하는 출력값으로 바꾸어도 상관없습니다.
 
 W = tf.Variable(tf.random_normal([1]), name = 'weight')
 b = tf.Variable(tf.random_normal([1]), name = 'bias')
@@ -41,4 +41,11 @@ for i in range(2001):
     sess.run(train)
     if i % 20 == 0:
         print(i, sess.run(cost), sess.run(W), sess.run(b))
-# 실결과 2000 2.4564352e-07 [0.9994243] [0.00130855]
+# 실행결과 6.961123e-06 [1.0030643] [-0.00696576]
+
+#test 입력 5에 대한 결과
+new_x = 5.0
+y = new_x*sess.run(W)+sess.run(b)
+print(y)
+# 실행결과 [5.0083556]
+# 결과는 랜덤이니셜라이져에 의해 초기화 
